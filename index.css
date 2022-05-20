@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+html{
+    zoom: 90%;
+}
+body {
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+.main {
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  height: 80vh;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  padding-right: 17px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding-top: 0;
+  height: 75vh;
+  overflow-y: scroll;
+  padding-right: 17px;
+  padding-left: 17px;
+  padding-top: 0;
+  box-sizing: content-box;
+}
+
+* {
+  font-weight: 100 !important;
+}
+.categories h5 {
+  padding: 0.5rem;
+}
+.categories {
+  height: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+.categories h4 {
+  font-family: var(--secondary-text);
+  font-size: 1.1rem;
+  padding: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  color: rgb(7, 6, 6);
+}
+.categories span {
+  font-family: var(--main-text);
+  cursor: pointer;
+}
+.question {
+  font-family: var(--main-text);
+  margin: auto;
+}
+.answers div:hover {
+  background-color: rgb(44, 167, 243);
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  box-shadow: none;
+}
+.question h5 {
+  font-family: var(--secondary-texts);
+  font-size: 1.1rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  margin: auto;
+  width: fit-content;
+}
+.answers div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 1rem;
+  background: rgb(255, 255, 255);
+  margin: 0.75rem;
+  text-align: center;
+  color: rgb(63, 63, 63);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.signed {
+  background-color: rgb(44, 167, 243) !important;
+  color: white!important;
+}
+.correct {
+  background-color: rgb(31, 212, 31) !important;
+  font-weight: 500;
+}
+.incorrect {
+  background-color: rgb(207, 40, 40) !important;
+}
+nav {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  flex-direction: row;
+  width: 500px;
+  margin: auto;
+}
+.correct-answers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-bar div {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.bar {
+  width: 1px;
+  border-radius: 5px;
+  height: 20px;
+  transition: ease-in-out 0.5s;
+  background-color: rgb(31, 212, 31);
+}
+.bar-container {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.options {
+  display: grid;
+
+  left: 0%;
+  margin-left: 1rem;
+}
+.options label {
+  text-align: center;
+}
+.start {
+  border: none;
+  cursor: pointer;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  color: black;
+  font-size: 1.1rem;
+}
+#question-numbers {
+  border: 0;
+  padding: 0.5rem;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+.hard,
+.medium,
+.easy {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+.title-grid {
+  display: grid;
+  grid-template-columns: 95% 5%;
+  align-items: center;
+  gap: 1rem;
+  padding: auto;
+}
+.hard {
+  background-color: rgb(231, 34, 34);
+}
+.medium {
+  background-color: rgb(255, 255, 0);
+}
+.easy {
+  background-color: rgb(31, 212, 31);
+}
+@media screen and (max-width: 768px) {
+  .categories .answers {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+  }
+  nav {
+    width: auto;
+  }
+  .options {
+    position: static;
+  }
+  .main {
+    width: 100%;
+    padding-right: 20px;
+  }
+}
