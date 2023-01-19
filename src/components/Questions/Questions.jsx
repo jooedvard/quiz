@@ -126,7 +126,7 @@ const Questions = ({ questions,  reset }) => {
         </div>
       </div>
 
-      <div className="flex justify-between flex-col sm:flex-row">
+      <div className="flex justify-between mt-4 flex-col sm:flex-row">
         <div className="">
           <button
             onClick={onPrev}
