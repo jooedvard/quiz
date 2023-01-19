@@ -67,7 +67,7 @@ const CategoryList = ({
               <div key={category} className="">
                 <label
                   onClick={handleInput}
-                  className={`text ml-2 cursor-pointer  p-2 text-sm font-medium ${
+                  className={`text ml-2 cursor-pointer text-white p-2 text-sm font-medium ${
                     categories.includes(category)
                       ? "text-white bg-ocean  rounded"
                       : "bg-transparent"
