@@ -24,70 +24,40 @@ body {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: auto;
-    background: linear-gradient(315deg, rgb(186 230 253) 3%,rgb(186 230 253) 38%,  rgb(186 230 253) 68%, rgb(186 230 253) 98%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
+    background: rgb(191, 148, 66);
+    background: radial-gradient(circle, rgba(191, 148, 66, 1) 0%, rgb(18, 86, 90) 0%, rgba(25, 42, 46, 1) 100%);
+    /*
+
+        deep: '#192a2e',
+        ocean: '#327c80',
+        tahiti: "#bf9442"
+    */
+  
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
-    100% {
-        background-position: 0% 0%;
-    }
+.bg-transparent{
+    background: transparent !important;
 }
 
-.wave {
-    background: rgb(255 255 255 / 25%);
-    border-radius: 1000% 1000% 0 0;
-    position: fixed;
-    width: 200%;
-    height: 12em;
-    animation: wave 10s -3s linear infinite;
-    transform: translate3d(0, 0, 0);
-    opacity: 0.8;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
+.grid-cats{
+    
+    display: grid;
+    max-width: 400px;
+    grid-template-columns: auto auto;
+    padding: 2rem 0;
+    gap: wrap;
+    gap: 10px;
+
 }
 
-.wave:nth-of-type(2) {
-    bottom: -1.25em;
-    animation: wave 18s linear reverse infinite;
-    opacity: 0.8;
-}
-
-.wave:nth-of-type(3) {
-    bottom: -2.5em;
-    animation: wave 20s -1s reverse infinite;
-    opacity: 0.9;
-}
-
-@keyframes wave {
-    2% {
-        transform: translateX(1);
+@media screen and (max-width: 650px) {
+    #root > div > div.flex.flex-col.justify-between.w-full > div.flex.flex-col.gap-5 > h1{
+        font-size: 14px !important;
     }
 
-    25% {
-        transform: translateX(-25%);
-    }
-
-    50% {
-        transform: translateX(-50%);
-    }
-
-    75% {
-        transform: translateX(-25%);
-    }
-
-    100% {
-        transform: translateX(1);
+    .grid-cats{
+        max-width: auto;
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }

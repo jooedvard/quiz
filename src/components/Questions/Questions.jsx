@@ -40,7 +40,7 @@ const Questions = ({ questions,  reset }) => {
         <button
           onClick={reset}
           type="button"
-          class="rotate-180 h-fit w-fit mb-3 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800"
+          class="rotate-180 bg-oceanwhite shadow h-fit w-fit mb-3 text-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800"
         >
           <svg
             aria-hidden="true"
@@ -59,10 +59,8 @@ const Questions = ({ questions,  reset }) => {
         </button>
 
         <div className="w-fit flex flex-col gap-2 relative">
-          <h1 className="text text-sky-800 font-bold mt-2 mb-2 leading-5  ms:text-sm">
-            {questions[active].question}
-          </h1>
-          <p className="text text-gray-500 font-semibold text-xs ">
+          
+          <p className="text text-ocean font-semibold text-xs ">
             Click on buttons for next question
           </p>
           <div className="flex flex-row flex-wrap gap-2 mt-4 question">
@@ -70,9 +68,9 @@ const Questions = ({ questions,  reset }) => {
               questions.map((question, index) => {
                 return (
                   <div
-                    className={`ease-in duration-300 w-[12px] h-[12px] rounded-full border border-gray-400 hover:bg-blue-500 hover:text-white cursor-pointer ${
-                      chosenAnswers[index] != null && "bg-sky-800"
-                    } ${active === index && "bg-cyan-500"}`}
+                    className={`ease-in duration-300 w-[12px] h-[12px] rounded-full border border-ocean hover:bg-white hover:text-white cursor-pointer ${
+                      chosenAnswers[index] != null && "bg-deep"
+                    } ${active === index && "bg-white"}`}
                     key={"question" + index}
                     onClick={() => {
                       setActive(index);
@@ -81,15 +79,18 @@ const Questions = ({ questions,  reset }) => {
                 );
               })}
           </div>
-          <h1 className="custom__font text-sky-800 font-semibold leading-8 text-sm">{`Q${
+          <h1 className="custom__font font-semibold text-white leading-8 text-sm">{`Q${
             active + 1
           }/${questions.length}`}</h1>
         </div>
       </div>
 
       <div className="flex flex-col gap-5">
+      <h1 className="text font-bold mt-2 mb-2 text-white text-px_26 ">
+            {questions[active].question}
+          </h1>
         <div>
-          <p className="flex gap-2  text-gray-500 italic mt-10 text-xs max-[300px]:hidden sm:custom__font sm:text-sm">
+          <p className="flex gap-2  text-ocean italic mt-2 text-xs max-[300px]:hidden sm:custom__font sm:text-sm">
             <span>Tags:</span>
             {questions[active].tags.map((tag) => {
               return (
@@ -99,11 +100,11 @@ const Questions = ({ questions,  reset }) => {
               );
             })}
           </p>
-          <div className="grid mt-3">
+          <div className="grid mt-3 gap-2">
             {questions[active].answers.map((answer) => {
               return (
                 <div
-                  className="flex flex-row items-center	cursor-pointer gap-3"
+                  className="flex flex-row text-white items-center	cursor-pointer gap-3"
                   key={answer}
                   onClick={() => {
                     updateChosenAnswers(answer);
@@ -115,7 +116,7 @@ const Questions = ({ questions,  reset }) => {
                     }}
                     type={"checkbox"}
                     disabled={result != null}
-                    className=" w-6 h-6 mt-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    className=" w-6 h-6  text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     checked={chosenAnswers[active] === answer ? true : false}
                   />
                   <label className="cursor-pointer gap-3">{answer}</label>
@@ -130,31 +131,31 @@ const Questions = ({ questions,  reset }) => {
         <div className="">
           <button
             onClick={onPrev}
-            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+            class="relative bg-oceanwhite shadow inline-flex items-center justify-center  mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500  dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
           >
-            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-oceanwhite dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
               Prev
             </span>
           </button>
 
           <button
             onClick={onNext}
-            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+            class="relative inline-flex  bg-oceanwhite shadow items-center justify-center  mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500  dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
           >
-            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-oceanwhite dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
               Next
             </span>
           </button>
           <button
             onClick={onFinish}
             type="button"
-            class=" text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            class="bg-finish  bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
           >
             Finish
           </button>
           
         </div>
-        <p className="mt-5 mb-5">
+        <p className="mt-5 mb-5 text-gold  custom__font">
             Your Score: {result} / {questions.length}
           </p>
         <div>
