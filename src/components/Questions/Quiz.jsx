@@ -11,6 +11,14 @@ const QUIZ_API =
   const [renderStart, setRenderStart] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState();
   const [isGameStart, setGameStart] = useState(false);
+  const [name, setName] = useState("");
+
+  const reset = () => {
+    setQuestions(null);
+    setRenderStart(false);
+    setSelectedCategories([]);
+    setGameStart(false);
+  }
 
   const fetchQuestions = async () => {
     let request = await fetch(QUIZ_API + [...selectedCategories])
@@ -35,19 +43,20 @@ const QUIZ_API =
 
 
   return (
-    <div>
+    <>
       <CategoryList
         setRenderStart={setRenderStart}
         setSelectedCategories={setSelectedCategories}
         isGameStart={isGameStart}
+        fetchQuestions={fetchQuestions}
+        setName={setName}
       ></CategoryList>
-      {renderStart && !isGameStart && <button onClick={fetchQuestions}>Start Quiz</button>}
       {questions != null && 
       <>
-      <Questions questions={questions}></Questions>
+      <Questions questions={questions} reset={reset}></Questions>
       </>}
       
-    </div>
+    </>
   );
 };
 
