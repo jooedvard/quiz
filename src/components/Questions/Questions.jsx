@@ -127,7 +127,6 @@ const Questions = ({ questions, reset }) => {
                           updateChosenAnswers(answer);
                         }}
                         type={"checkbox"}
-                        disabled={result != null}
                         className=" w-6 h-6  text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                         checked={
                           chosenAnswers[active] === answer ? true : false
@@ -143,23 +142,23 @@ const Questions = ({ questions, reset }) => {
 
           <div className="flex justify-between mt-4 flex-col sm:flex-row">
             <div className="">
-              <button
+              {active != 0 && <button
                 onClick={onPrev}
                 class="relative bg-oceanwhite shadow inline-flex items-center justify-center  mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500  dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
               >
                 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-oceanwhite dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                   Prev
                 </span>
-              </button>
+              </button>}
 
-              <button
+              {active != questions.length - 1 && <button
                 onClick={onNext}
                 class="relative inline-flex  bg-oceanwhite shadow items-center justify-center  mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500  dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
               >
                 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-oceanwhite dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                   Next
                 </span>
-              </button>
+              </button>}
               <button
                 onClick={onFinish}
                 type="button"
