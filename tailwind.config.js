@@ -13,11 +13,16 @@ module.exports = {
       transparent: "transparent",
       oceanwhite: "#caf0f8",
       gold: "#f0f3bd",
-      finish: "#02c39a"
+      finish: "#02c39a",
     },
     fontSize: {
       px_32: '32px',
       px_26: '26px',
+      xs: "12px",
+      sm: "14px"
+    },
+    gridTemplateColumns: {
+      '1-auto': '1fr auto'
     },
     extend: {},
   },
